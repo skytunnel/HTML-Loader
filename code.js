@@ -6,6 +6,7 @@ var urlParamFileId = 'gDriveFileId';
 //Function to pharse parameter from URL
 function getUrlParam(paraName) {
     var params = location.search.split('?');
+    if (params.length < 2) return;
     params = params[1].split('&');  
     for (var i = 0; i < params.length; i++) {
          var temp = params[i].split("=");
@@ -13,7 +14,6 @@ function getUrlParam(paraName) {
              return temp[1]; 
          }
     }
-    return;
 }
 
 //function to display message on page
