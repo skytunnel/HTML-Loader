@@ -27,7 +27,7 @@ function displayMsg(msgStr) {
 
 //ajax error handler
 $(document).ajaxError( function(event, jqxhr, settings, thrownError) {
-    displayMsg('unexpected ajax response: ' + thrownError);
+    displayMsg('unexpected ajax response: ' + jqxhr.responseText);
 });
 
 //function to review the file ID provided
