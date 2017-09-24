@@ -65,7 +65,7 @@ function loadHTML(urlPath) {
     $.get(urlPath, function(data) {
         //$.parseHTML(data, document, false);
         //document.write(data);
-        var doc = document    
+        var doc = document;
         doc = doc.open("text/html");
         doc.write(data);
         doc.close();
