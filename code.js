@@ -1,20 +1,22 @@
 //Google Drive public file access
 var gDriveFilesUrl = 'https://www.googleapis.com/drive/v2/files/';
 var gDriveApiKey = 'AIzaSyDlD0Io4fOzxFrNz1KQk7XfiMcs8g0HEcY';
-var urlParamFileId = 'gDriveFileId';
+var urlParamFileId = 'gDriveFileID';
 
-//Function to pharse parameter from URL
-function getUrlParam(paraName) {
+//Get all URL arguments
+var args = {};
+function getUrlArguments() {
     var params = location.search.split('?');
     if (params.length < 2) return;
     params = params[1].split('&');  
     for (var i = 0; i < params.length; i++) {
-         var temp = params[i].split("=");
-         if (temp[0] == paraName) { 
-             return temp[1]; 
+        var parm = params[i].split("=");
+        if (parm.length == 2) {
+            args[parm[0]] = parm[1];
          }
     }
 }
+getUrlArguments();
 
 //function to display message on page
 function displayMsg(msgStr) {
@@ -26,7 +28,7 @@ function displayMsg(msgStr) {
 //function to load up html from google drive
 function loadHTML() {
     //Get user provided file ID for google Drive
-    var gDriveFileId = getUrlParam(urlParamFileId);
+    var gDriveFileId = args[urlParamFileId];
 
     //Exit if not provided
     if (typeof gDriveFileId != 'string') {
