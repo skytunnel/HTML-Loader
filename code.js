@@ -25,6 +25,11 @@ function displayMsg(msgStr) {
     document.body.appendChild(e);
 }
 
+//ajax error handler
+$(document).ajaxError( function(event, jqxhr, settings, thrownError) {
+    displayMsg('unexpected ajax response: ' + thrownError);
+});
+
 //function to review the file ID provided
 function CheckHTMLFile() {
     //Get user provided file ID for google Drive
@@ -48,7 +53,7 @@ function CheckHTMLFile() {
             return;
         }
         loadHTML(fileRequestURL);
-    },'json');    
+    },'json');
 }
 
 //function to load the HTML to page
