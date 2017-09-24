@@ -46,7 +46,7 @@ function CheckHTMLFile() {
         + gDriveFileId
         + '?key=' + gDriveApiKey;
 
-    //Ensure HTML file provided
+    /*Ensure HTML file provided
     $.get(fileRequestURL, function(data) {
         if (data.fileExtension != 'html') {
             displayMsg('Google Drive file: ' + data.originalFilename + ' is not an HTML file');
@@ -67,8 +67,9 @@ function loadHTML(urlPath) {
         document.write(data);
     },'html');
 }
-
-    /*Prepare Request
+*/
+    //Prepare Request
+    fileRequestURL += '&alt=media';
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function() {
         if (xmlhttp.readyState == 4) {
@@ -89,6 +90,7 @@ function loadHTML(urlPath) {
     //Send request
     xmlhttp.open("GET", fileRequestURL, true);
     xmlhttp.send();
+}
     */
 
 //load on startup
