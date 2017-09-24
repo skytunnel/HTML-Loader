@@ -43,7 +43,7 @@ function loadHTML() {
         //+ '&alt=media';
 
     //Send request
-    %.get(fileRequestURL, function(data) {
+    $.get(fileRequestURL, function(data) {
         displayMsg(JSON.stringify(data, null, 2));
     }
     
