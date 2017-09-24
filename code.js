@@ -42,7 +42,14 @@ function loadHTML() {
         + '?key=' + gDriveApiKey;
         //+ '&alt=media';
 
-    //Prepare Request
+    //Send request
+    %.get(fileRequestURL, function(data) {
+        displayMsg(JSON.stringify(data, null, 2));
+    }
+    
+    
+    
+    /*Prepare Request
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function() {
         if (xmlhttp.readyState == 4) {
@@ -63,14 +70,8 @@ function loadHTML() {
     //Send request
     xmlhttp.open("GET", fileRequestURL, true);
     xmlhttp.send();
+    */
 }
 
 //load on startup
-//loadHTML();
-
-if (typeof $ == 'undefined') {
-     alert('no jquery');
-           } else {
-           alert('jquery');
-           }
-
+loadHTML();
