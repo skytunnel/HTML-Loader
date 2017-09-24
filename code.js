@@ -95,7 +95,6 @@ function loadHTML(urlPath) {
     xmlhttp.open("GET", fileRequestURL, true);
     xmlhttp.send();
     */
-}
 
 //load on startup
 CheckHTMLFile();
