@@ -63,17 +63,11 @@ function loadHTML(urlPath) {
     
     //Send file request
     $.get(urlPath, function(data) {
-        $.parseHTML(data, document, false);
-        //document.write(data);
+        //$.parseHTML(data, document, false);
+        document.write(data);
     },'html');
 }
 
-
-         
-         
-    
-    
-    
     /*Prepare Request
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function() {
