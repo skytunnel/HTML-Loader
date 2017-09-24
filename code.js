@@ -45,7 +45,9 @@ function loadHTML() {
     //Send request
     $.get(fileRequestURL, function(data) {
         displayMsg(JSON.stringify(data, null, 2));
-    }
+    });
+         
+         
     
     
     
