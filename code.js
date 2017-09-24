@@ -18,17 +18,17 @@ function getUrlArguments() {
 }
 getUrlArguments();
 
-//function to display message on page
+/function to display message on page
 function displayMsg(msgStr) {
     var e = document.createElement('pre');
     e.innerHTML = msgStr;
     document.body.appendChild(e);
 }
 
-//ajax error handler
+/*ajax error handler
 $(document).ajaxError( function(event, jqxhr, settings, thrownError) {
     displayMsg('unexpected ajax response: ' + jqxhr.responseText);
-});
+});*/
 
 //function to review the file ID provided
 function CheckHTMLFile() {
@@ -46,7 +46,7 @@ function CheckHTMLFile() {
         + gDriveFileId
         + '?key=' + gDriveApiKey;
 
-    //Ensure HTML file provided
+    /*Ensure HTML file provided
     $.get(fileRequestURL, function(data) {
         if (data.fileExtension != 'html') {
             displayMsg('Google Drive file: ' + data.originalFilename + ' is not an HTML file');
@@ -66,9 +66,9 @@ function loadHTML(urlPath) {
         //$.parseHTML(data, document, false);
         document.write(data);
     },'html');
-}
+}*/
 
-    /*Prepare Request
+    //Prepare Request
     fileRequestURL += '&alt=media';
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function() {
@@ -90,7 +90,7 @@ function loadHTML(urlPath) {
     //Send request
     xmlhttp.open("GET", fileRequestURL, true);
     xmlhttp.send();
-}*/
+}
 
 //load on startup
 CheckHTMLFile();
