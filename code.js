@@ -42,10 +42,15 @@ function loadHTML() {
         + '?key=' + gDriveApiKey;
         //+ '&alt=media';
 
-    //Send request
+    //Ensure HTML file provided
     $.get(fileRequestURL, function(data) {
-        displayMsg(JSON.stringify(data, null, 2));
+        if (data.fileExtension != 'html') {
+            displayMsg('Google Drive file: ' + data.originalFileName + ' is not an HTML file');
+            return;
+        }
     },'json');
+    
+    displayMsg('Im here');
          
          
     
