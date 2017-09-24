@@ -25,10 +25,10 @@ function displayMsg(msgStr) {
     document.body.appendChild(e);
 }
 
-//ajax error handler
+/*ajax error handler
 $(document).ajaxError( function(event, jqxhr, settings, thrownError) {
     displayMsg('unexpected ajax response: ' + jqxhr.responseText);
-});
+});*/
 
 //function to review the file ID provided
 function CheckHTMLFile() {
@@ -91,7 +91,6 @@ function loadHTML(urlPath) {
     xmlhttp.open("GET", fileRequestURL, true);
     xmlhttp.send();
 }
-    */
 
 //load on startup
 CheckHTMLFile();
