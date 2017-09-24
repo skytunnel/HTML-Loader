@@ -66,4 +66,11 @@ function loadHTML() {
 }
 
 //load on startup
-loadHTML();
+//loadHTML();
+
+if (typeof $ == 'undefined') {
+     alert('no jquery');
+           } else {
+           alert('jquery');
+           }
+
