@@ -18,7 +18,7 @@ function getUrlArguments() {
 }
 getUrlArguments();
 
-/function to display message on page
+//function to display message on page
 function displayMsg(msgStr) {
     var e = document.createElement('pre');
     e.innerHTML = msgStr;
