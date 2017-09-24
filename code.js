@@ -25,8 +25,8 @@ function displayMsg(msgStr) {
     document.body.appendChild(e);
 }
 
-//function to load up html from google drive
-function loadHTML() {
+//function to review the file ID provided
+function CheckHTMLFile() {
     //Get user provided file ID for google Drive
     var gDriveFileId = args[urlParamFileId];
 
@@ -40,17 +40,29 @@ function loadHTML() {
     var fileRequestURL = gDriveFilesUrl
         + gDriveFileId
         + '?key=' + gDriveApiKey;
-        //+ '&alt=media';
 
     //Ensure HTML file provided
     $.get(fileRequestURL, function(data) {
         if (data.fileExtension != 'html') {
-            displayMsg('Google Drive file: ' + data.originalFileName + ' is not an HTML file');
+            displayMsg('Google Drive file: ' + data.originalFilename + ' is not an HTML file');
             return;
         }
-    },'json');
+        loadHTML(fileRequestURL);
+    },'json');    
+}
+
+//function to load the HTML to page
+function loadHTML(urlPath) {
+    //Set to get file content
+    urlPath += '&alt=media';
     
-    displayMsg('Im here');
+    //Send file request
+    $.get(urlPath, function(data) {
+        document.write(data);
+    },'html');
+}
+
+
          
          
     
@@ -81,4 +93,4 @@ function loadHTML() {
 }
 
 //load on startup
-loadHTML();
+CheckHTMLFile();
