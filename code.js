@@ -37,10 +37,10 @@ function loadHTML() {
     }
 
     //Compile File Request Url
-    var fileRequestURL = gDriveFilesUrl 
-        + gDriveFileId 
-        + '?key=' + gDriveApiKey 
-        + '&alt=media';
+    var fileRequestURL = gDriveFilesUrl
+        + gDriveFileId
+        + '?key=' + gDriveApiKey;
+        //+ '&alt=media';
 
     //Prepare Request
     var xmlhttp = new XMLHttpRequest();
